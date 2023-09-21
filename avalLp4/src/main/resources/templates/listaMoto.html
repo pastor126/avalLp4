@@ -71,6 +71,10 @@
 						th:data-confirm-delete="|Deseja realmente apagar a ${moto.modelo} ?|"
 						th:onclick="if(!confirm(this.getAttribute('data-confirm-delete'))) return false">
 					</a></td>
+					<td>
+							<a th:href="@{/proprietario/buscarProprietario/{id}(id=${moto.id})}">proprietário</a>	
+							<!--  -->
+						</td>
 				</tr>
 
 			</tbody>
