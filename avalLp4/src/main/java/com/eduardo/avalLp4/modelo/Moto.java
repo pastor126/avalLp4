@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -17,6 +18,16 @@ public class Moto {
 	@NotBlank(message = "O modelo deve ser informado.")
 	private String modelo;
 	private String cor;
+	@OneToOne
+	private Proprietario proprietario;
+	
+	
+	public Proprietario getProprietario() {
+		return proprietario;
+	}
+	public void setProprietario(Proprietario proprietario) {
+		this.proprietario = proprietario;
+	}
 	public Long getId() {
 		return id;
 	}
